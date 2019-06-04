@@ -92,7 +92,7 @@ int main() {
 				cout << t << endl;
 		}
 		else if (feature == "dep_time") {
-			string dep_time
+			string dep_time;
 		}
 		else if (feature == "destination") {
 
