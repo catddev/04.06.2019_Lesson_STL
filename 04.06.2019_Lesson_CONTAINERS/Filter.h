@@ -1,33 +1,53 @@
 ﻿#pragma once
 #include"Train.h"
+#include"Ticket.h"
 
 class filter {
 	string prop;
-	train obj;
+	train t;
 public:
-	filter();//
-	filter(string prop, train obj) {
+	
+	filter(string prop, train t) {
 		this->prop = prop;
-		this->obj = obj;
+		this->t = t;
 	}
-	bool operator()() {
+	void operator()(train t) {
 		if (prop == "number") {
-			int n;
-			cin >> n;
-			return (obj.getNumber() != n);
-				//cout << obj;
+			if(this->t.getNumber()==t.getNumber())
+				cout << t;
 		}
 		else if (prop == "dep_time") {
-			string s;
-			cin >> s;
-			return (obj.getDepartureTime() != s);
-				//cout << obj;
+			if (this->t.getDepartureTime() == t.getDepartureTime())
+				cout << t;
 		}
 		else if (prop == "destination") {
-			string s;
-			cin >> s;
-			return (obj.getDestination() != s);
-				//cout << obj;
+			if (this->t.getDestination() == t.getDestination())
+				cout << t;
+		}
+	}
+};
+
+class filter2 {
+	string prop;
+	ticket t;
+public:
+
+	filter2(string prop, ticket t) {
+		this->prop = prop;
+		this->t = t;
+	}
+	void operator()(ticket t) {
+		if (prop == "flight") {
+			if (this->t.getFlight() == t.getFlight())
+				cout << t;
+		}
+		else if (prop == "departure") {
+			if (this->t.getDeparture() == t.getDeparture())
+				cout << t;
+		}
+		else if (prop == "passenger") {
+			if (this->t.getPassenger() == t.getPassenger())
+				cout << t;
 		}
 	}
 };

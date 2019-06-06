@@ -14,17 +14,17 @@ train::train(int n, string s1, string s2)
 	this->destination = s2;
 }
 
-int train::getNumber()
+int& train::getNumber()
 {
 	return number;
 }
 
-string train::getDepartureTime()
+string& train::getDepartureTime()
 {
 	return departure_time;
 }
 
-string train::getDestination()
+string& train::getDestination()
 {
 	return destination;
 }

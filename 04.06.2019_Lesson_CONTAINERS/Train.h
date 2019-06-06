@@ -19,8 +19,8 @@ class train {
 public:
 	train();
 	train(int n, string s1, string s2);
-	int getNumber();
-	string getDepartureTime();
-	string getDestination();
+	int &getNumber();
+	string &getDepartureTime();
+	string &getDestination();
 	friend ostream& operator<<(ostream& os, train t);
 };
